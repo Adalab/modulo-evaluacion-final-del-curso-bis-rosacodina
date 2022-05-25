@@ -1,7 +1,7 @@
 //https://api.sampleapis.com/recipes/recipes
 
 //Function fetch to return the data that the Api shows.
-const ApiData = () => {
+const apiData = () => {
   //The parameter fetch is the url api
   return (
     fetch('https://api.sampleapis.com/recipes/recipes')
@@ -22,4 +22,4 @@ const ApiData = () => {
   );
 };
 
-export default ApiData;
+export default apiData;

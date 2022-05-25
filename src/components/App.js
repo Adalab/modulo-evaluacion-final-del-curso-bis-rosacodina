@@ -1,14 +1,19 @@
-// import sirve para enlazar /traer las dependencias que necesitamos.
-// Librerías JS
-// CSS
-// Imágenes
-// JSON
-
+import { useState, useEffect } from 'react';
 import '../styles/App.scss';
-import recipeApi from '../services/recipeApi';
+import apiData from '../services/recipeApi';
 
 // Función principal.
 function App() {
+  //Function to modify a state variable
+  const [dataRecipes, setDataRecipes] = useState([]);
+
+  useEffect(() => {
+    //To bring the cleaned data
+    apiData().then((dataClean) => {
+      console.log(dataClean);
+      setDataRecipes(dataClean);
+    });
+  }, []);
   return (
     <>
       <header className="header">
