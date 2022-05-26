@@ -11,10 +11,10 @@ const apiData = () => {
         const dataClean = data.map((recipe) => {
           return {
             title: recipe.title,
-            cuisine: recipe.cuisine,
-            tags: recipe.tags,
             photoUrl: recipe.photoUrl,
+            cuisine: recipe.cuisine,
             calories: recipe.calories,
+            tags: recipe.tags,
           };
         });
         return dataClean;

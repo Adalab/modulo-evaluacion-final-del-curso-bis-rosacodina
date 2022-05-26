@@ -1,11 +1,10 @@
-import RecipeItem from './RecipeItem';
+import Item from './Item';
 
 function RecipesList(props) {
-  //I go to every position of the array that I get through props
   const recipeElements = props.recipes.map((recipe) => {
     return (
       <li>
-        <RecipeItem />
+        <Item recipe={recipe} />
       </li>
     );
   });
