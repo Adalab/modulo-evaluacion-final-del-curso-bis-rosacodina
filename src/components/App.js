@@ -36,11 +36,9 @@ function App() {
   //To send filtered data to RecipiesList
   //Conditional to paint all recipes
   const recipesFilters = dataRecipes.filter((recipe) => {
-    if (cuisineFilter === '') {
-      return true;
-    } else {
-      return recipe.cuisine === cuisineFilter;
-    }
+    return cuisineFilter === ''
+      ? true
+      : recipe.cuisine.toLowerCase().includes(cuisineFilter.toLowerCase());
   });
   /*-----------------*/
 
