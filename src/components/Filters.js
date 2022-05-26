@@ -1,10 +1,10 @@
 import CuisineFilter from './CuisineFilter';
 
-function Filters() {
+function Filters(props) {
   return (
     <section>
       <form>
-        <CuisineFilter />
+        <CuisineFilter handleCuisineFilter={props.handleCuisineFilter} />
       </form>
     </section>
   );
