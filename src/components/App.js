@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import '../styles/App.scss';
 import apiData from '../services/recipeApi';
+import RecipesList from './RecipesList';
 
 // Función principal.
 function App() {
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
       <h1 className="header__title">RECETAS</h1>
+      <RecipesList recipes={dataRecipes} />
     </>
   );
 }
