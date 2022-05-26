@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import '../styles/App.scss';
 import apiData from '../services/recipeApi';
 import RecipesList from './RecipesList';
+import Filters from './Filters';
 
 // Función principal.
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <>
       <h1 className="header__title">RECETAS</h1>
       <RecipesList recipes={dataRecipes} />
+      <Filters />
     </>
   );
 }
