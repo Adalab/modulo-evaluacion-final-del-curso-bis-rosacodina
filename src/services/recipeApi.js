@@ -8,7 +8,7 @@ const apiData = () => {
       .then((response) => response.json())
       //I bring the cleaned data from Api by using a map array
       .then((data) => {
-        const dataClean = data.recipes.map((recipe) => {
+        const dataClean = data.map((recipe) => {
           return {
             title: recipe.title,
             cuisine: recipe.cuisine,

@@ -7,8 +7,8 @@ function App() {
   //Function to modify a state variable
   const [dataRecipes, setDataRecipes] = useState([]);
 
+  //To bring the cleaned data
   useEffect(() => {
-    //To bring the cleaned data
     apiData().then((dataClean) => {
       console.log(dataClean);
       setDataRecipes(dataClean);
@@ -16,9 +16,7 @@ function App() {
   }, []);
   return (
     <>
-      <header className="header">
-        <h1 className="header__title">RECETAS</h1>
-      </header>
+      <h1 className="header__title">RECETAS</h1>
     </>
   );
 }
