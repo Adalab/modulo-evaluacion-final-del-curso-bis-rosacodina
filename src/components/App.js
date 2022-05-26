@@ -42,10 +42,21 @@ function App() {
   });
   /*-----------------*/
 
+  /*-----------------*/
+  //Function to take the id from the recipe
+  const getIdRecipe = () => {
+    const idRecipes = dataRecipes.map((recipe) => recipe.id);
+    const uniqueRecipes = idRecipes.filter((id, index) => {
+      return idRecipes.indexOf(id === index);
+    });
+    return uniqueRecipes;
+  };
+  /*-----------------*/
+
   return (
     <>
       <h1 className="header__title">RECETAS</h1>
-      <RecipesList recipes={recipesFilters} />
+      <RecipesList recipes={recipesFilters} id={getIdRecipe()} />
       <Filters handleCuisineFilter={handleCuisineFilter} />
     </>
   );
