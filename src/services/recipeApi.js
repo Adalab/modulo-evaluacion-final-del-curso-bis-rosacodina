@@ -10,6 +10,7 @@ const apiData = () => {
       .then((data) => {
         const dataClean = data.map((recipe) => {
           return {
+            id: recipe.id,
             title: recipe.title,
             photoUrl: recipe.photoUrl,
             cuisine: recipe.cuisine,

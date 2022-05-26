@@ -12,6 +12,7 @@ function CuisineFilter(props) {
             type="text"
             placeholder="Type to search any cuisine type"
             onChange={handleChange}
+            value={props.cuisineFilter}
           ></input>
         </label>
       </section>
