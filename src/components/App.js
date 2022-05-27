@@ -13,6 +13,7 @@ function App() {
   /*-----------------*/
   //State variable that will change when the user types
   const [cuisineFilter, setCuisineFilter] = useState('');
+
   /*-----------------*/
 
   /*-----------------*/
@@ -43,7 +44,7 @@ function App() {
   /*-----------------*/
 
   /*-----------------*/
-  //Function to take the id from the recipe
+  /*Function to take the id from the recipe
   const getIdRecipe = () => {
     const idRecipes = dataRecipes.map((recipe) => recipe.id);
     const uniqueRecipes = idRecipes.filter((id, index) => {
@@ -52,14 +53,18 @@ function App() {
     return uniqueRecipes;
   };
   /*-----------------*/
+  //I create an array to introduce into it the recipes that the user clicks
 
   return (
     <>
       <h1 className="header__title">RECETAS</h1>
-      <RecipesList recipes={recipesFilters} id={getIdRecipe()} />
-      <Filters handleCuisineFilter={handleCuisineFilter} />
+      <div>
+        <RecipesList recipes={recipesFilters} />
+        <Filters handleCuisineFilter={handleCuisineFilter} />
+      </div>
     </>
   );
 }
-
+//Poner dentro de la etique Filters, a continuación de handleCuisine
+//id={getIdRecipe()}
 export default App;

@@ -6,10 +6,10 @@ function Filters(props) {
     <section>
       <form>
         <CuisineFilter handleCuisineFilter={props.handleCuisineFilter} />
-        <ChosenRecipe id={props.id} />
       </form>
     </section>
   );
 }
 
 export default Filters;
+// poner en form <ChosenRecipe id={props.id} />
