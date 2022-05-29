@@ -3,7 +3,7 @@ import Item from './Item';
 function RecipesList(props) {
   const recipeElements = props.recipes.map((recipe) => {
     return (
-      <li>
+      <li key={recipe.id}>
         <Item recipe={recipe} />
       </li>
     );
