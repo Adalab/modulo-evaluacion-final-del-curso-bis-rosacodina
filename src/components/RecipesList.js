@@ -10,6 +10,10 @@ function RecipesList(props) {
   });
   return (
     <section>
+      <section>
+        <button>Save recipes</button>
+        <button>Recover recipes</button>
+      </section>
       <ul>{recipeElements}</ul>
     </section>
   );
