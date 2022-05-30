@@ -15,6 +15,7 @@ function App() {
   //State variable that will change when the user types
   const [cuisineFilter, setCuisineFilter] = useState('');
   /*-----------------*/
+  const [timeFilter, setTimeFilter] = useState('');
   /*-----------------*/
   //To bring the cleaned data
   useEffect(() => {
@@ -30,6 +31,9 @@ function App() {
     setCuisineFilter(value);
   };
   /*-----------------*/
+  const handleTimeFilter = (value) => {
+    setTimeFilter(value);
+  };
   /*-----------------*/
   //To send filtered data to RecipiesList
   //Conditional to paint all recipes
@@ -37,6 +41,11 @@ function App() {
     return cuisineFilter === ''
       ? true
       : recipe.cuisine.toLowerCase().includes(cuisineFilter.toLowerCase());
+  });
+
+  /*-----------------*/
+  const totalTimeFilter = recipesFilters.filter((recipe) => {
+    return timeFilter === '' ? true : recipe.totalTime === parseInt(timeFilter);
   });
   /*-----------------*/
   const { pathname } = useLocation();
@@ -51,8 +60,12 @@ function App() {
           element={
             <>
               <h1 className="header__title">RECETAS</h1>
-              <Filters handleCuisineFilter={handleCuisineFilter} />
-              <RecipesList recipes={recipesFilters} />
+              <Filters
+                handleCuisineFilter={handleCuisineFilter}
+                handleTimeFilter={handleTimeFilter}
+              />
+
+              <RecipesList recipes={totalTimeFilter} />
             </>
           }
         />

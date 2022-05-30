@@ -15,6 +15,7 @@ const apiData = () => {
             photoUrl: recipe.photoUrl,
             cuisine: recipe.cuisine,
             calories: recipe.calories,
+            totalTime: recipe.totalTime,
             tags: recipe.tags,
           };
         });
